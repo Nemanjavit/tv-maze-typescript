@@ -1,0 +1,11 @@
+.showCard {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    .showCard-image{
+        width: 416px;
+        object-fit: cover;
+        aspect-ratio: 0.6933;
+    }
+}

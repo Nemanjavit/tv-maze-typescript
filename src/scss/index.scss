@@ -1,0 +1,9 @@
+@import './bootstrap-override';
+@import './reset';
+@import './fonts/fonts';
+@import './varibles';
+@import './common';
+
+//Components
+@import './components/HomeHero';
+@import './components/ShowCard'
