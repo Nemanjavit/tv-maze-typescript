@@ -24,7 +24,7 @@ const HomeHero = () => {
     const scrollWidth = rowRef.current.scrollWidth || 0;
     const containerWidth = containerRef.current?.clientWidth || 0;
     const scrollDistance = scrollWidth - containerWidth;
-
+    console.log(scrollDistance);
     let ctx = gsap.context(() => {
       gsap.fromTo(
         rowRef.current,
