@@ -28,6 +28,7 @@ export const showsSlice = createSlice({
     builder.addCase(getShows.pending, (state) => {
       state.isLoading = true;
     });
+
     builder.addCase(getShows.fulfilled, (state, action) => {
       state.isLoading = false;
       state.shows = action.payload;

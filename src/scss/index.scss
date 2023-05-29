@@ -6,4 +6,8 @@
 
 //Components
 @import './components/HomeHero';
-@import './components/ShowCard'
+@import './components/ShowCard';
+
+*{
+    position: relative;
+}
