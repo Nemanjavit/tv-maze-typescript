@@ -32,8 +32,8 @@ const TopRated = () => {
   };
 
   return (
-    <Container className="container-padding">
-      <div className="topRatedPage">
+    <Container>
+      <div className="topRatedPage container-padding">
         <TitleWithLink title={"all top rated shows at the moment"} />
 
         <Row className="gy-4">
