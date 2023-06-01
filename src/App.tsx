@@ -5,6 +5,7 @@ import MainNav from "./components/MainNav";
 import HomePage from "./pages/Home";
 import { useAppDispatch } from "./store/typedStoreHooks";
 import { getShows } from "./store/shows/showsSlice";
+import TopRated from "./pages/TopRated";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -18,6 +19,7 @@ function App() {
       <MainNav />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/toprated" element={<TopRated/>}/>
       </Routes>
     </div>
   );

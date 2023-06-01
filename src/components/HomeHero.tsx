@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState, useLayoutEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Card from "./Card";
+import TitleWithLink from "./TitleWithLink";
 import { useAppSelector } from "../store/typedStoreHooks";
 import { getTopRatedShows } from "../store/shows/selectors";
-import TitleWithLink from "./TitleWithLink";
 
 const HomeHero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -63,13 +63,15 @@ const HomeHero = () => {
         <TitleWithLink
           title={"Top rated shows at the moment:"}
           link={{
-            to: "/shows",
+            to: "/toprated",
             text: "Top Rated Shows",
           }}
         />
         <Row ref={rowRef} className="flex-nowrap card-slider">
-          {allShows.map((show) => (
-            <Card key={show.id} show={show} />
+          {allShows.slice(0, 10).map((show) => (
+            <Col key={show.id} xs={11} md={6} lg={4}>
+              <Card show={show} />
+            </Col>
           ))}
         </Row>
       </div>

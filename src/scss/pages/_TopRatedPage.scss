@@ -1,0 +1,35 @@
+.topRatedPage {
+  .top-rated-pagination {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+    li {
+      margin: 0 $xs-margin;
+      overflow: hidden;
+      border-radius: $border-radius-lg;
+      border: 1px solid rgba(0, 0, 0, 0.23);
+    }
+
+    a {
+      color: unset;
+      display: block;
+      text-decoration: none;
+      padding: $s-padding $medium-padding;
+
+      &:hover {
+        color: $white;
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .disabled-link {
+      pointer-events: none;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .active-link {
+      background: rgba(0, 0, 0, 0.23);
+    }
+  }
+}
