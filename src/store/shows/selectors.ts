@@ -8,7 +8,5 @@ export const getTopRatedShows = createSelector(getAllShows, (allshows) => {
 
   const topRated = shows.sort((a, b) => b.weight - a.weight);
 
-  topRated.length = 10;
-
-  return topRated;
+  return topRated.slice(0, 10);
 });

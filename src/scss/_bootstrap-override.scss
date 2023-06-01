@@ -3,4 +3,40 @@ $theme-colors:(
     'primary':#3c948b,
 );
 
+$font-300: 300;
+$font-400: 400;
+$font-500: 500;
+$font-600: 600;
+$font-700: 700;
+
+
+// FONT WEIGHTS
+$font-slim: $font-300;
+$font-neutral: $font-400;
+$font-median: $font-600;
+$font-bulky: $font-700;
+
+
+//font-size
+$h1: 6rem;
+$h2: 5rem;
+$h3: 4rem;
+$h4: 3rem;
+
+$h1-mobile: 3rem;
+$h2-mobile: 2.5rem;
+$h3-mobile: 2rem;
+$h4-mobile: 1.5rem;
+
+$subheading-xl: 2.5rem;
+$subheading-l: 2rem;
+$subheading-m: 1.5rem;
+$subheading-sm: 1rem;
+$subheading-xs: 0.875rem;
+
+$body-xl: 1.5rem;
+$body-l: 1.25rem;
+$body-m: 1rem;
+$body-sm: 0.875rem;
+
 @import "~bootstrap/scss/bootstrap";

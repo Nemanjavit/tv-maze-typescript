@@ -1,6 +1,98 @@
 .container-padding {
     padding: 80px 0;
 }
-body{
-    // height: 3000px;
+
+.App{
+  overflow-x: hidden;
+}
+
+.h1,h2,h3,h4 {
+  line-height: 0.9;
+  font-weight: 700;
+  font-family: $primary-font;
+  text-transform: uppercase;
+}
+
+.subheading-small,
+.subheading-large,
+.subheading-medium {
+  line-height: 1.1;
+}
+
+.body-small,
+.body-large,
+.body-medium {
+  line-height: 1.2;
+}
+
+.h1 {
+  font-size: $h1;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h1-mobile;
+  }
+}
+
+.h2 {
+  font-size: $h2;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h2-mobile;
+  }
+}
+
+.h3 {
+  font-size: $h3;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h3-mobile;
+  }
+}
+
+.h4 {
+  font-size: $h4;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h4-mobile;
+  }
+}
+
+.subheading {
+  &-x-large {
+    font-size: $subheading-xl;
+  }
+
+  &-large {
+    font-size: $subheading-l;
+  }
+
+  &-medium {
+    font-size: $subheading-m;
+  }
+
+  &-small {
+    font-size: $subheading-sm;
+  }
+
+  &-x-small {
+    font-size: $subheading-xs;
+  }
+}
+
+.body {
+  &-x-large {
+    font-size: $body-xl;
+  }
+
+  &-large {
+    font-size: $body-l;
+  }
+
+  &-medium {
+    font-size: $body-m;
+  }
+
+  &-small {
+    font-size: $body-sm;
+  }
 }

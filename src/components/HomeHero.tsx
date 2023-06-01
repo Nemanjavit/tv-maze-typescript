@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { Container, Row } from "react-bootstrap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Card from "./Card";
 import { useAppSelector } from "../store/typedStoreHooks";
 import { getTopRatedShows } from "../store/shows/selectors";
+import TitleWithLink from "./TitleWithLink";
 
 const HomeHero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,20 +24,17 @@ const HomeHero = () => {
   }, []);
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      const scrollWidth =
-        document.querySelector(".card-slider")?.scrollWidth || 0;
+    const scrollWidth =
+      document.querySelector(".card-slider")?.scrollWidth || 0;
 
-      const containerWidth =
-        document.querySelector(".card-slider")?.getBoundingClientRect().width ||
-        0;
+    const containerWidth =
+      document.querySelector(".homeHero")?.getBoundingClientRect().width || 0;
 
-      setScrollDistance(scrollWidth - containerWidth);
-    });
-  }, [isLoaded]);
+    setScrollDistance(scrollWidth - containerWidth);
+  }, [allShows]);
 
   useEffect(() => {
-    if (!rowRef.current || !containerRef.current) return;
+    if (!rowRef.current && !containerRef.current) return;
 
     let ctx = gsap.context(() => {
       gsap.fromTo(
@@ -49,7 +47,7 @@ const HomeHero = () => {
             start: "top top",
             end: "+=4000",
             pin: true,
-            scrub: 0.8,
+            scrub: true,
             invalidateOnRefresh: true,
           },
         }
@@ -57,11 +55,18 @@ const HomeHero = () => {
     });
 
     return () => ctx.revert();
-  }, [isLoaded, scrollDistance]);
+  }, [allShows, isLoaded, scrollDistance]);
 
   return (
     <Container ref={containerRef}>
       <div className="container-padding homeHero">
+        <TitleWithLink
+          title={"Top rated shows at the moment:"}
+          link={{
+            to: "/shows",
+            text: "Top Rated Shows",
+          }}
+        />
         <Row ref={rowRef} className="flex-nowrap card-slider">
           {allShows.map((show) => (
             <Card key={show.id} show={show} />

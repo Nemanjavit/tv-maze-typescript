@@ -8,7 +8,7 @@ type CardT = {
 
 const Card: FunctionComponent<CardT> = ({ show }) => {
   return (
-    <Col sm={12} lg={4}>
+    <Col xs={11} md={6} lg={4}>
       <div className="showCard">
         <div className="showCard-body">
           <div className="image-wrapper">
