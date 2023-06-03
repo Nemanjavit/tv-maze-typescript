@@ -13,17 +13,22 @@ type TitleWithLinkT = {
 
 const TitleWithLink: FunctionComponent<TitleWithLinkT> = ({ title, link }) => {
   return (
-    <Row>
+    <Row className="titleWithLink">
       <Col xs={12} md={7}>
         <h2 className="h2 mb-5">{title}</h2>
       </Col>
-      <Col className="d-flex justify-content-end" md={{ span: 4, offset: 1 }}>
-        {!!link && (
-          <Link to={link.to}>
-            {link?.text}
-            <ImArrowRight2 />
-          </Link>
-        )}
+      <Col md={{ span: 4, offset: 1 }}>
+        <Row>
+          {!!link && (
+            <Link
+              className="d-flex justify-content-end align-items-center subheading-medium text-decoration-none text-dark"
+              to={link.to}
+            >
+              <span className="titleWithLink-text">{link?.text}</span>
+              <ImArrowRight2 />
+            </Link>
+          )}
+        </Row>
       </Col>
     </Row>
   );

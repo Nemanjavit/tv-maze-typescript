@@ -5,10 +5,12 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Card from "./Card";
 import TitleWithLink from "./TitleWithLink";
+import useIsMobile from "../hooks/useIsMobile";
 import { useAppSelector } from "../store/typedStoreHooks";
 import { getTopRatedShows } from "../store/shows/selectors";
 
 const HomeHero = () => {
+  const { isMobile } = useIsMobile();
   const [isLoaded, setIsLoaded] = useState(false);
   const rowRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +46,7 @@ const HomeHero = () => {
           x: -scrollDistance,
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top top",
+            start: `top ${isMobile ? "-80px" : "-80px"}`,
             end: "+=4000",
             pin: true,
             scrub: true,
